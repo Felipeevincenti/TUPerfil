@@ -5,21 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Perfil</title>
+    <link rel="stylesheet" href="../styles/general.css">
 </head>
 
 <body>
 
     <header id="header">
 
-        <div class="header__icono-conteiner">
-            <p class="header__icono"><span>TUP</span>erfil</p>
+        <div class="header__logo-conteiner">
+            <p class="header__logo"><span>TUP</span>erfil</p>
         </div>
 
-        <div class="header__links-conteiner">
-            <a class="header__link" href="index.html">Inicio</a>
-            <a class="header__link" href="crear-perfil.html">Crear</a>
-            <a class="header__link" href="explorar.html">Explorar</a>
+    </header>
+
+    <header id="headerMobile">
+
+        <div class="headerMobile__contenedorIconos">
+            <a class="headerMobile__icono headerMobile__icono-home" href="crear-perfil.html">
+                <iconify-icon icon="mi:user-add" width="32" height="32"></iconify-icon>
+            </a>
+
+            <a class="headerMobile__logo" href="index.html">T</a>
+
+            <a class="headerMobile__icono headerMobile__icono-menu" href="explorar.html">
+                <iconify-icon icon="lucide:users" width="32" height="32"></iconify-icon>
+            </a>
         </div>
+
+        <nav class="headerMobile__nav">
+            <ul class="headerMobile__ul">
+                <li class="headerMobile__li"><a class="headerMobile__link" href="index.html">Inicio</a></li>
+                <li class="headerMobile__li"><a class="headerMobile__link" href="explorar.html">Explorar</a></li>
+                <li class="headerMobile__li"><a class="headerMobile__link" href="crear-perfil.html">Crear</a></li>
+            </ul>
+        </nav>
 
     </header>
 
@@ -32,28 +51,28 @@
             <div class="explorar__contenedor">
 
                 <div class="explorar__contenedor-perfil">
-                <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                <p class="contenedor-perfil-estudio">Programador</p>
-                <small class="contenedor-perfil-estado">Estudiante</small>
-            </div>
+                    <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                    <p class="contenedor-perfil-estudio">Programador</p>
+                    <small class="contenedor-perfil-estado">Estudiante</small>
+                </div>
 
-            <div class="contenedor-perfil-perfil">
-                <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                <p class="contenedor-perfil-estudio">UX/UI</p>
-                <small class="contenedor-perfil-estado">Recibido</small>
-            </div>
+                <div class="contenedor-perfil-perfil">
+                    <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                    <p class="contenedor-perfil-estudio">UX/UI</p>
+                    <small class="contenedor-perfil-estado">Recibido</small>
+                </div>
 
-            <div class="contenedor-perfil-perfil">
-                <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                <p class="contenedor-perfil-estudio">Programador</p>
-                <small class="contenedor-perfil-estado">Recibido</small>
-            </div>
+                <div class="contenedor-perfil-perfil">
+                    <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                    <p class="contenedor-perfil-estudio">Programador</p>
+                    <small class="contenedor-perfil-estado">Recibido</small>
+                </div>
 
-            <div class="contenedor-perfil-perfil">
-                <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-                <p class="contenedor-perfil-estudio">Programador</p>
-                <small class="contenedor-perfil-estado">Estudiante</small>
-            </div>
+                <div class="contenedor-perfil-perfil">
+                    <img class="contenedor-perfil-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                    <p class="contenedor-perfil-estudio">Programador</p>
+                    <small class="contenedor-perfil-estado">Estudiante</small>
+                </div>
             </div>
 
         </section>
@@ -66,6 +85,9 @@
         <p class="footer__copy">&COPY; 2025 - Vincenti Felipe - Fazio Alejo - Gattari Khalil - Antebi Ignacio</p>
 
     </footer>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+
 
 </body>
 
