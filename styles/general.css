@@ -18,9 +18,6 @@ body {
     overflow-x: hidden;
 }
 
-
-
-
 #header {
     display: none;
 }
@@ -74,7 +71,6 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-
 
 .headerMobile__ul {
     background: var(--color-secundario);
