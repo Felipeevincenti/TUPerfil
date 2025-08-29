@@ -22,23 +22,47 @@ body {
 }
 
 #headerMobile {
-    display: flex;
     position: fixed;
+    display: flex;
     width: 100vw;
     height: 5rem;
-    top: calc(100vh - 5em);
-}
-
-.headerMobile__contenedorIconos {
+    bottom: 0;
     background: var(--color-primario);
     color: var(--color-secundario);
-    width: 100%;
-    height: 5rem;
-    display: flex;
     justify-content: space-around;
     align-items: center;
     z-index: 100;
     border-radius: .3rem .3rem 0 0;
+}
+
+.headerMobile-1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33%;
+    height: .2rem;
+    background: var(--color-secundario);
+}
+
+.headerMobile-2::after {
+    content: "";
+    position: absolute;
+    left: 33,33%;
+    top: 0;
+    width: 33%;
+    height: .2rem;
+    background: var(--color-secundario);
+}
+
+.headerMobile-3::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33%;
+    height: .2rem;
+    background: var(--color-secundario);
 }
 
 .headerMobile__icono {
@@ -46,6 +70,7 @@ body {
     border: none;
     outline: none;
     color: var(--color-secundario);
+    padding-top: 1rem;
 }
 
 .headerMobile__logo {
