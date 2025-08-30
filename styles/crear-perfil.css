@@ -1,79 +1,148 @@
-:root {
-    --color-primario: #125489;
-    --color-primario-hover: #0c385b;
-    --color-secundario: #fff;
-    --color-negro-transparente: rgba(0, 0, 0, .6);
-    --espaciado-titulos: 2rem 0;
-    --color-input: #669dca;
-}
+    :root {
+        --color-primario: #125489;
+        --color-primario-hover: #0c385b;
+        --color-secundario: #fff;
+        --color-negro-transparente: rgba(0, 0, 0, .6);
+        --espaciado-titulos: 2rem 0;
+        --color-input: #669dca;
+        --color-terciario-fondo: #eee;
+    }
 
-#main {
-    background-color: #eee;
-}
+    body {
+        background-color: var(--color-terciario-fondo);
+    }
 
-.crear__titulo {
-    font-size: 3rem;
-    text-align: center;
-    color: #000;
-    padding: var(--espaciado-titulos);
-}
+    #main {
+        background-color: var(--color-terciario-fondo);
+        padding: 3.5rem 0 4rem 0;
+    }
 
-.crear__titulo-span {
-    color: var(--color-primario);
-}
+    .crear__titulo {
+        font-size: 5rem;
+        text-align: center;
+        color: #000;
+        padding: var(--espaciado-titulos);
+        margin-bottom: 2.5rem;
+    }
 
-.crear__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0px 20px;
-    align-items: center;
-}
+    .crear__titulo-span {
+        color: var(--color-primario);
+    }
 
-.crear__form-label {
-    width: 200px;
-    text-align: center;
-}
+    .crear__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 20px;
+        align-items: center;
+    }
 
-.crear__form-fecha {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    gap: 10px;
-    justify-content: space-between;
-}
+    .crear__form-label {
+        width: 200px;
+        text-align: center;
+    }
 
-.crear__form-fecha select {
-    text-align: center;
-    width: 100%;
-    list-style: none;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
+    .crear__form-fecha {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        gap: 10px;
+        justify-content: space-between;
+    }
 
-.crear__form-campo {
-    padding: 15px 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
-}
+    .crear__form-fecha select {
+        text-align: center;
+        width: 100%;
+        list-style: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
 
-.crear__form-campo:focus {
-    outline: none;
-    background: var(--color-input);
-    color: #fff;
-}
+    .crear__form-campo {
+        padding: 15px 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+    }
 
-.crear__form-campo:focus::placeholder {
-    color: #fff;
-}
+    .crear__form-campo__textarea {
+        resize: none;
+        height: 10rem;
+    }
 
-.crear__form-checkbox-general {
-    display: flex;
-}
+    .crear__form-campo:focus {
+        outline: none;
+        background: var(--color-input);
+        color: var(--color-secundario);
+    }
 
-.crear__form-icono {
-    width: 32px;
-    height: 32px;
-}
+    .crear__form-campo:focus::placeholder {
+        color: var(--color-secundario);
+    }
+
+    .crear__form-checkbox-general {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    .crear__form-checkbox-container {
+        width: 4.5rem;
+        height: 4.5rem;
+        margin: 1rem 0;
+        border-radius: .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .crear__form-checkbox {
+        visibility: hidden;
+        display: none;
+    }
+
+    .crear__form-checkbox-container:has(input:checked) .crear__form-icono {
+        transition: all .5s;
+        filter: grayscale(0%);
+        transform: scale(1.1);
+    }
+
+    .crear__form-icono {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        filter: grayscale(100%);
+        transition: all .5s;
+    }
+
+    .crear__form-botonPortada {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        display: flex;
+        padding: 2rem 3rem;
+        background-color: var(--color-primario);
+        color: var(--color-secundario);
+        margin: 1rem 0 0 0;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        gap: 1rem;
+        transition: all .5s ease;
+    }
+
+     .crear__form-botonPortada svg {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .crear__form-nombreArchivo {
+        font-size: 1.3rem;
+        margin-bottom: 4rem;
+    }

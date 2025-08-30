@@ -2,6 +2,7 @@
     --color-primario: #125489;
     --color-primario-hover: #0c385b;
     --color-secundario: #fff;
+    --color-terciario-fondo: #eee;
     font-size: 10px;
 }
 
@@ -64,7 +65,7 @@ body {
     overflow: hidden;
     padding-bottom: 1rem;
     border: 1px solid #ccc;
-    background-color: #eee;
+    background-color: var(--color-terciario-fondo);
 }
 
 .perfiles__folio-img {

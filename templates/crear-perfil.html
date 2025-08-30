@@ -29,15 +29,15 @@
 
     <header id="headerMobile" class="headerMobile-1">
 
-            <a class="headerMobile__icono headerMobile__icono-crear" href="crear-perfil.html">
-                <iconify-icon icon="mi:user-add" width="32" height="32"></iconify-icon>
-            </a>
+        <a class="headerMobile__icono headerMobile__icono-crear" href="crear-perfil.html">
+            <iconify-icon id="headerMobile__icono-focus" icon="mi:user-add" width="32" height="32"></iconify-icon>
+        </a>
 
-            <a class="headerMobile__logo" href="../index.html">T</a>
+        <a class="headerMobile__logo" href="../index.html">T</a>
 
-            <a class="headerMobile__icono headerMobile__icono-explorar" href="explorar.html">
-                <iconify-icon icon="lucide:users" width="32" height="32"></iconify-icon>
-            </a>
+        <a class="headerMobile__icono headerMobile__icono-explorar" href="explorar.html">
+            <iconify-icon icon="lucide:users" width="32" height="32"></iconify-icon>
+        </a>
 
     </header>
 
@@ -55,9 +55,11 @@
 
                 <input class="crear__form-campo" placeholder="Correo Electrónico" type="mail">
 
+                <input class="crear__form-campo" placeholder="Telefono" type="tel">
+
                 <div class="crear__form-fecha">
 
-                    <select class="crear__form-campo" name=" dia" required>
+                    <select class="crear__form-campo" name="dia" required>
                         <option value="">Día</option>
                         <option value="1">1</option>
                     </select>
@@ -74,34 +76,64 @@
 
                 </div>
 
+                <select class="crear__form-campo" name="estado" required>
+                    <option value="">Seleccione estado</option>
+                    <option value="estudiando">Estudiando</option>
+                    <option value="recibido">Recibido</option>
+                </select>
+
                 <div class="crear__form-checkbox-general">
 
-                    <div class="crear__form-checkbox-container">
+                    <label class="crear__form-checkbox-container">
+                        <img class="crear__form-icono" src="../assets/icons/html-icono.svg" alt="icono html">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                    </label>
 
-                        <label>
-                            <img class="crear__form-icono" src="../assets/icons/html-icono.svg" alt="icono html">
+                    <label class="crear__form-checkbox-container">
+                        <img class="crear__form-icono" src="../assets/icons/css-icono.svg" alt="icono css">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                    </label>
+
+                    <label class="crear__form-checkbox-container">
+                        <img class="crear__form-icono" src="../assets/icons/js-icono.svg" alt="icono js">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                    </label>
+
+                    <!-- <label class="crear__form-checkbox-container">
+                            <img class="crear__form-icono" src="../assets/icons/bootstrap-icono.svg" alt="icono html">
                             <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
-                        </label>
+                        </label> -->
 
-                        <label>
-                            <img class="crear__form-icono" src="../assets/icons/css-icono.svg" alt="icono css">
-                            <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
-                        </label>
+                    <label class="crear__form-checkbox-container">
+                        <img class="crear__form-icono" src="../assets/icons/c-icono.svg" alt="icono html">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                    </label>
 
-                        <label>
-                            <img class="crear__form-icono" src="../assets/icons/js-icono.svg" alt="icono js">
-                            <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
-                        </label>
-
-                    </div>
+                    <label class="crear__form-checkbox-container">
+                        <img class="crear__form-icono" src="../assets/icons/mp.icono.svg" alt="icono js">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                    </label>
 
                 </div>
 
-                <label class="crear__form-label" for="">Descripción</label>
-                <textarea class="crear__form-campo"></textarea>
 
-                <label class="crear__form-label" for="">Portada</label>
-                <input class="crear__form-campo" type="file">
+                <textarea class="crear__form-campo crear__form-campo__textarea" placeholder="Descripción"></textarea>
+
+                <input id="fileInput" class="crear__form-campo" type="file" accept="image/*" hidden>
+                <img id="preview" src="" alt="Vista previa" style="max-width: 200px; display: none;">
+                <button id="portadaBtn" class="crear__form-botonPortada">
+                    <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-width="2" stroke="#fffffff"
+                            d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125"
+                            stroke-linejoin="round" stroke-linecap="round"></path>
+                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#fffffff"
+                            d="M17 15V18M17 21V18M17 18H14M17 18H20"></path>
+                    </svg>
+                    SUBIR PORTADA
+                </button>
+
+                <p id="nombreArchivo" class="crear__form-nombreArchivo">No hay archivos seleccionados</p>
 
             </form>
 
@@ -114,6 +146,35 @@
         <p class="footer__copy">&COPY; 2025 - Vincenti Felipe - Fazio Alejo - Gattari Khalil - Antebi Ignacio</p>
 
     </footer>
+
+    <script>
+  const fileInput = document.getElementById("fileInput");
+  const portadaBtn = document.getElementById("portadaBtn");
+const nombreArchivo = document.getElementById("nombreArchivo");
+const preview = document.getElementById("preview");
+  portadaBtn.addEventListener("click", () => {
+    fileInput.click();
+  });
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) {
+        
+        if (!file.type.startsWith("image/")) return;
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            preview.src = e.target.result;
+            preview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    } else {
+        preview.style.display = "none";
+    }
+    if (fileInput.files.length > 0) {
+      nombreArchivo.textContent = file.name;
+    }
+});
+</script>
 
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
     <script src="../scripts/crear.js"></script>
