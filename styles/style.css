@@ -66,6 +66,7 @@ body {
     padding-bottom: 1rem;
     border: 1px solid #ccc;
     background-color: var(--color-terciario-fondo);
+    border-radius: .5rem;
 }
 
 .perfiles__folio-img {
