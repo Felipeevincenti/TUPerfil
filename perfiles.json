@@ -1,45 +1,67 @@
 [
     {
-    "id": 1,
-    "nombre": "Felipe",
-    "apellido": "Vincenti",
-    "fechaNacimiento": "2004-04-27",
-    "fotoPerfil": "https://example.com/foto.jpg",
-    "descripcion": "Apasionado por la programación web y el diseño UX/UI.",
-    "estudio": "Programación",
-    "estado": "Estudiando"
-},
-
-{
-    "id": 120,
-    "nombre": "Alejo",
-    "apellido": "Fazio",
-    "fechaNacimiento": "2006-01-12",
-    "fotoPerfil": "https://example.com/foto.jpg",
-    "descripcion": "Me encanta lo jueguito y dema.",
-    "estudio": "Programación",
-    "estado": "En esa"  
-},
-
-{
-    "id": 2,
-    "nombre": "Ignacio",
-    "apellido": "Antebi",
-    "fechaNacimiento": "2007-01-12",
-    "fotoPerfil": "https://example.com/foto.jpg",
-    "descripcion": "Apacionado por recurrir todo a ChatGPT",
-    "estudio": "Curso de IA",
-    "estado": "No entendio la pregunta"
-},
-
-{
-    "id": 3,
-    "nombre": "Khalil",
-    "apellido": "Gattari",
-    "fechaNacimiento": "1923-07-11",
-    "fotoPerfil": "https://example.com/foto.jpg",
-    "descripcion": "En sus inicios trabajaba con lenguaje máquina, pero tuvo que amoldarse a la actualidad (un avanzado)",
-    "estudio": "Programación",
-    "estado": "Peluquero"
-}
+        "id": 1,
+        "nombre": "Felipe",
+        "apellido": "Vincenti",
+        "fechaNacimiento": "2004-04-27",
+        "email": "felipevincentisalani@gmail.com",
+        "telefono": "3416960489",
+        "portada": "https://example.com/foto.jpg",
+        "descripcion": "Apasionado por la programación web y el diseño UX/UI.",
+        "estudio": "Programación",
+        "estado": "Estudiando",
+        "habilidades": [
+            "html",
+            "css",
+            "js",
+            "c",
+            "mp"
+        ]
+    },
+    {
+        "id": 120,
+        "nombre": "Alejo",
+        "apellido": "Fazio",
+        "fechaNacimiento": "2006-01-12",
+        "email": "alejofazioestudio@gmail.com",
+        "telefono": "341333333",
+        "portada": "https://example.com/foto.jpg",
+        "descripcion": "Me encanta lo jueguito y dema.",
+        "estudio": "Programación",
+        "estado": "Recibido",
+        "habilidades": [
+            "mp"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Ignacio",
+        "apellido": "Antebi",
+        "fechaNacimiento": "2006-11-20",
+        "email": "ignacioantebi20@gmail.com",
+        "telefono": "3416112525",
+        "portada": "https://example.com/foto.jpg",
+        "descripcion": "Apacionado por recurrir todo a ChatGPT",
+        "estudio": "UX/UI",
+        "estado": "Estudiando",
+        "habilidades": [
+            "c"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Khalil",
+        "apellido": "Gattari",
+        "fechaNacimiento": "1994-01-10",
+        "email": "khalilgattari@gmail.com",
+        "telefono": "3416960489",
+        "portada": "https://example.com/foto.jpg",
+        "descripcion": "En sus inicios trabajaba con lenguaje máquina, pero tuvo que amoldarse a la actualidad (un avanzado)",
+        "estudio": "Programación",
+        "estado": "Estudiando",
+        "habilidades": [
+            "c",
+            "mp"
+        ]
+    }
 ]

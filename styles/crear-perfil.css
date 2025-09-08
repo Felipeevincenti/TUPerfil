@@ -130,7 +130,6 @@
         padding: 2rem 3rem;
         background-color: var(--color-primario);
         color: var(--color-secundario);
-        margin: 1rem 0 0 0;
         cursor: pointer;
         border-radius: 0.5rem;
         gap: 1rem;
@@ -144,5 +143,19 @@
 
     .crear__form-nombreArchivo {
         font-size: 1.3rem;
-        margin-bottom: 4rem;
+        padding: 0rem 3rem;
     }
+
+    .crear__form-enviar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #008236;
+        outline: none;
+        color: #fff;
+        width: 12rem;
+        height: 5rem;
+        border: none;
+        border-radius: 5px;
+        gap: .7rem;
+    }   

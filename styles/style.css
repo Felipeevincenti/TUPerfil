@@ -86,9 +86,20 @@ body {
 }
 
 .perfiles__folio-estado {
-    background: red;
     background: green;
+    font-size: 1.5rem;
     color: var(--color-secundario);
+    padding: .3rem .8rem;
+    margin: .5rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+.perfiles__folio-estudio {
+    /* background: orange; */
+     font-size: 1.5rem;
+    color: var(--color-primario-hover);
+    font-weight: bold;
     padding: .3rem .8rem;
     margin: .5rem;
     border-radius: 1rem;

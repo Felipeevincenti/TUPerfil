@@ -35,7 +35,7 @@
         height: 5.5rem;
         transition: all 0.2s;
         margin-bottom: 3rem;
-        
+
     }
 
     .buscar__contenedor-lupa {
@@ -79,4 +79,61 @@
     .contenedor-perfil-img {
         width: 100%;
         padding: 1.5rem;
+    }
+
+    .explorar__folios-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 1rem;
+    }
+
+    .explorar__folio {
+        width: 100%;
+        overflow: hidden;
+        font-size: 2rem;
+        overflow: hidden;
+        padding-bottom: 1rem;
+        border: 1px solid #ccc;
+        background-color: var(--color-terciario-fondo);
+        border-radius: .5rem;
+    }
+
+    .explorar__folio-img {
+        width: 100%;
+        padding: .3rem;
+    }
+
+    .explorar__folio-info {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 0rem 1rem;
+        align-items: center;
+    }
+
+    .explorar__folio-estudio {
+        font-size: 2rem;
+
+    }
+
+    .explorar__folio-estado {
+        background: green;
+        font-size: 1.5rem;
+        color: var(--color-secundario);
+        padding: .3rem .8rem;
+        margin: .5rem;
+        border-radius: 1rem;
+        display: inline-block;
+    }
+
+    .explorar__folio-estudio {
+        /* background: orange; */
+        font-size: 1.5rem;
+        color: var(--color-primario-hover);
+        font-weight: bold;
+        padding: .3rem .8rem;
+        margin: .5rem;
+        border-radius: 1rem;
+        display: inline-block;
     }

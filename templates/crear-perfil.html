@@ -53,7 +53,7 @@
 
                 <input id="apellido" class="crear__form-campo" placeholder="Apellido" type="text">
 
-                <input id="correoElectronico" class="crear__form-campo" placeholder="Correo Electrónico" type="mail">
+                <input id="correoElectronico" class="crear__form-campo" placeholder="Correo Electrónico" type="email">
 
                 <input id="telefono" class="crear__form-campo" placeholder="Telefono" type="tel">
 
@@ -79,6 +79,8 @@
                     <option value="recibido">Recibido</option>
                 </select>
 
+                <input id="estudio" class="crear__form-campo" placeholder="Carrera" type="text">
+
                 <div class="crear__form-checkbox-general">
 
                     <label class="crear__form-checkbox-container">
@@ -88,31 +90,36 @@
 
                     <label class="crear__form-checkbox-container">
                         <img class="crear__form-icono" src="../assets/icons/css-icono.svg" alt="icono css">
-                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono" value="css">
                     </label>
 
                     <label class="crear__form-checkbox-container">
                         <img class="crear__form-icono" src="../assets/icons/js-icono.svg" alt="icono js">
-                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono" value="js">
                     </label>
 
                     <label class="crear__form-checkbox-container">
                         <img class="crear__form-icono" src="../assets/icons/c-icono.svg" alt="icono html">
-                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono" value="c">
                     </label>
 
                     <label class="crear__form-checkbox-container">
                         <img class="crear__form-icono" src="../assets/icons/mp.icono.svg" alt="icono js">
-                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono" value="mp">
                     </label>
 
                 </div>
 
 
-                <textarea id="textareaDescripcion" class="crear__form-campo crear__form-campo__textarea" placeholder="Descripción"></textarea>
+                <textarea id="textareaDescripcion" class="crear__form-campo crear__form-campo__textarea"
+                    placeholder="Descripción"></textarea>
 
                 <input id="fileInput" class="crear__form-campo" type="file" accept="image/*" hidden>
+                
                 <img id="preview" src="" alt="Vista previa" style="max-width: 200px; display: none;">
+
+                <p id="nombreArchivo" class="crear__form-nombreArchivo">No hay archivos seleccionados</p>
+
                 <button id="portadaBtn" class="crear__form-botonPortada">
                     <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -124,9 +131,11 @@
                     </svg>
                     SUBIR PORTADA
                 </button>
-                <button type="submit">Enviar</button>
 
-                <p id="nombreArchivo" class="crear__form-nombreArchivo">No hay archivos seleccionados</p>
+                <button class="crear__form-enviar" type="submit">Enviar
+                    <iconify-icon icon="lucide:send" width="18" height="24">
+                    </iconify-icon>
+                </button>
 
             </form>
 
