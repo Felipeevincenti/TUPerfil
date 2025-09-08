@@ -47,36 +47,33 @@
 
             <h1 class="crear__titulo">Crea <span class="crear__titulo-span">TUP</span>erfil</h1>
 
-            <form class="crear__form">
+            <form id="crear__form" class="crear__form">
 
-                <input class="crear__form-campo" placeholder="Nombre" type="text">
+                <input id="nombre" class="crear__form-campo" placeholder="Nombre" type="text">
 
-                <input class="crear__form-campo" placeholder="Apellido" type="text">
+                <input id="apellido" class="crear__form-campo" placeholder="Apellido" type="text">
 
-                <input class="crear__form-campo" placeholder="Correo Electrónico" type="mail">
+                <input id="correoElectronico" class="crear__form-campo" placeholder="Correo Electrónico" type="mail">
 
-                <input class="crear__form-campo" placeholder="Telefono" type="tel">
+                <input id="telefono" class="crear__form-campo" placeholder="Telefono" type="tel">
 
                 <div class="crear__form-fecha">
 
-                    <select class="crear__form-campo" name="dia" required>
-                        <option value="">Día</option>
-                        <option value="1">1</option>
-                    </select>
-
-                    <select class="crear__form-campo" name="mes" required>
-                        <option value="">Mes</option>
-                        <option value="enero">Enero</option>
-                    </select>
-
-                    <select class="crear__form-campo" name="anio" required>
+                    <select id="contenedorAnios" class="crear__form-campo" name="anio" required>
                         <option value="">Año</option>
-                        <option value="2005">2005</option>
+                    </select>
+
+                    <select id="contenedorMes" class="crear__form-campo" name="mes" required>
+                        <option value="">Mes</option>
+                    </select>
+
+                    <select disabled id="contenedorDia" class="crear__form-campo" name="dia" required>
+                        <option value="">Día</option>
                     </select>
 
                 </div>
 
-                <select class="crear__form-campo" name="estado" required>
+                <select id="contenedorEstado" class="crear__form-campo" name="estado" required>
                     <option value="">Seleccione estado</option>
                     <option value="estudiando">Estudiando</option>
                     <option value="recibido">Recibido</option>
@@ -86,7 +83,7 @@
 
                     <label class="crear__form-checkbox-container">
                         <img class="crear__form-icono" src="../assets/icons/html-icono.svg" alt="icono html">
-                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
+                        <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono" value="html">
                     </label>
 
                     <label class="crear__form-checkbox-container">
@@ -98,11 +95,6 @@
                         <img class="crear__form-icono" src="../assets/icons/js-icono.svg" alt="icono js">
                         <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
                     </label>
-
-                    <!-- <label class="crear__form-checkbox-container">
-                            <img class="crear__form-icono" src="../assets/icons/bootstrap-icono.svg" alt="icono html">
-                            <input class="crear__form-checkbox" type="checkbox" name="crear__form-icono">
-                        </label> -->
 
                     <label class="crear__form-checkbox-container">
                         <img class="crear__form-icono" src="../assets/icons/c-icono.svg" alt="icono html">
@@ -117,7 +109,7 @@
                 </div>
 
 
-                <textarea class="crear__form-campo crear__form-campo__textarea" placeholder="Descripción"></textarea>
+                <textarea id="textareaDescripcion" class="crear__form-campo crear__form-campo__textarea" placeholder="Descripción"></textarea>
 
                 <input id="fileInput" class="crear__form-campo" type="file" accept="image/*" hidden>
                 <img id="preview" src="" alt="Vista previa" style="max-width: 200px; display: none;">
@@ -132,6 +124,7 @@
                     </svg>
                     SUBIR PORTADA
                 </button>
+                <button type="submit">Enviar</button>
 
                 <p id="nombreArchivo" class="crear__form-nombreArchivo">No hay archivos seleccionados</p>
 
