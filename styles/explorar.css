@@ -8,12 +8,11 @@
         --color-terciario-fondo: #eee;
     }
 
-
-
     #main {
         background-color: #eee;
         padding: 3.5rem 2rem 4rem 2rem;
     }
+
 
     .explorar__titulo {
         font-size: 7rem;
@@ -83,24 +82,26 @@
 
     .explorar__folios-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
         gap: 1rem;
     }
 
     .explorar__folio {
-        width: 100%;
-        overflow: hidden;
+        width: 90%;
+        height: 10rem;
         font-size: 2rem;
-        overflow: hidden;
-        padding-bottom: 1rem;
-        border: 1px solid #ccc;
-        background-color: var(--color-terciario-fondo);
+        box-shadow: 0px 0px 4px -1px;
+        background-color: #ddd;
         border-radius: .5rem;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        gap: 1.5rem;
     }
 
     .explorar__folio-img {
-        width: 100%;
+        border-radius: 100%;
         padding: .3rem;
     }
 
@@ -110,6 +111,15 @@
         flex-direction: column;
         padding: 0rem 1rem;
         align-items: center;
+
+    }
+
+    .explorar__folio-nombres {
+        display: flex;
+        justify-items: space-evenly;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 1rem;
     }
 
     .explorar__folio-estudio {
