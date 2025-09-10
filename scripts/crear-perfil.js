@@ -115,6 +115,7 @@ form.addEventListener("submit", (e) => {
   const checkboxesSeleccionados = document.querySelectorAll(
     ".crear__form-checkbox:checked"
   );
+  
   const habilidades = Array.from(checkboxesSeleccionados).map(
     (chk) => chk.value
   );
@@ -141,10 +142,8 @@ form.addEventListener("submit", (e) => {
   };
 
   let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios") || "[]");
-
+  
   usuariosGuardados.push(usuario);
-
+  
   localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
-
-  console.log("Usuarios en Local Storage:", usuariosGuardados);
 });
