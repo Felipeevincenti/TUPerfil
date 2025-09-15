@@ -16,6 +16,7 @@ const inputEstudio = document.getElementById("estudio");
 const inputEstado = document.getElementById("contenedorEstado");
 const inputDescripcion = document.getElementById("textareaDescripcion");
 
+let id = 120;
 let portadaBase64 = "";
 
 // -----------------  SUBIR PORTADA ----------------- //
@@ -69,8 +70,8 @@ fetch("../fecha.json")
 let valorMes = "";
 
 contenedorAnios.addEventListener("change", () => {
-    contenedorMes.value = "";
-    contenedorDia.value = "";
+  contenedorMes.value = "";
+  contenedorDia.value = "";
 })
 
 contenedorMes.addEventListener("change", () => {
@@ -115,7 +116,7 @@ form.addEventListener("submit", (e) => {
   const checkboxesSeleccionados = document.querySelectorAll(
     ".crear__form-checkbox:checked"
   );
-  
+
   const habilidades = Array.from(checkboxesSeleccionados).map(
     (chk) => chk.value
   );
@@ -129,6 +130,7 @@ form.addEventListener("submit", (e) => {
   }
 
   const usuario = {
+    id: id + 1,
     nombre: inputNombre.value,
     apellido: inputApellido.value,
     email: inputEmail.value,
@@ -142,8 +144,23 @@ form.addEventListener("submit", (e) => {
   };
 
   let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios") || "[]");
-  
+
   usuariosGuardados.push(usuario);
-  
+
   localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
+
+  usuario = {};
+  inputApellido.value = "";
+  inputNombre.value = "";
+  inputEmail.value = "";
+  inputTelefono.value = "";
+  inputEstado.value = "";
+  inputEstudio.value = "";
+  inputDescripcion.value = "";
+  nombreArchivo.text = "No hay archivos seleccionados";
+  preview.src = "";
+  preview.style.display = "none";
+  contenedorAnios.value = "";
+  contenedorMes.value = "";
+  contenedorDia.value = "";
 });

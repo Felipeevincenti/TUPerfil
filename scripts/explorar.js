@@ -8,21 +8,22 @@ fetch("../perfiles.json")
         perfiles.push(...res);
         for (let i = 0; i < perfiles.length; i++) {
             contenedorPerfiles.innerHTML += `
-                <div class="explorar__folio">
+            <a class="explorar__folio" href="../templates/perfil.html?id=${perfiles[i].id}">
 
-                        <img class="explorar__folio-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
+                <div class="explorar__folio-img-container">
+                    <img class="explorar__folio-img" src="${perfiles[i].portada}" alt="">
+                </div>    
+                
+                <div class="explorar__folio-info">
+                    
+                    <div class="explorar__folio-nombres">
+                        <p class="explorar__folio-nombres__apellido">${perfiles[i].apellido}</p>
+                    </div>
+                    <small class="explorar__folio-estudio">${perfiles[i].estudio}</small>
+                    <small class="explorar__folio-estado">${perfiles[i].estado}</small>
                         
-                        <div class="explorar__folio-info">
-                            
-                            <div class="explorar__folio-nombres">
-                                <p class="explorar__folio-nombres__apellido">${perfiles[i].apellido}</p>
-                                <p class="explorar__folio-nombres__nombre">${perfiles[i].nombre}</p>
-                            </div>
-                            <small class="explorar__folio-estudio">${perfiles[i].estudio}</small>
-                            <small class="explorar__folio-estado">${perfiles[i].estado}</small>
-
-                        </div>
-
-                    </div>`;
+                </div>
+                        
+            </a>`;
         }
     });

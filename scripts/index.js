@@ -10,13 +10,13 @@ fetch("../perfiles.json")
 
         for (let i = 0; i < perfiles.length; i++) {
             contenedorPerfiles.innerHTML += `
-        <div class="perfiles__folio">
-            <img class="perfiles__folio-img" src="https://www.w3schools.com/howto/img_avatar.png" alt="">
-            <div class="perfiles__folio-info">  
-                <p class="perfiles__folio-apellido">${perfiles[i].apellido}</p>
-                <small class="perfiles__folio-estudio">${perfiles[i].estudio}</small>
-                <small class="perfiles__folio-estado">${perfiles[i].estado}</small>
-            </div>
-        </div>`
+            <a class="perfiles__folio" href="templates/perfil.html?id=${perfiles[i].id}">
+                <img class="perfiles__folio-img" src="${perfiles[i].portada}" alt="">
+                <div class="perfiles__folio-info">  
+                    <p class="perfiles__folio-apellido">${perfiles[i].apellido}</p>
+                    <small class="perfiles__folio-estudio">${perfiles[i].estudio}</small>
+                    <small class="perfiles__folio-estado">${perfiles[i].estado}</small>
+                </div>
+            </a>`
         }
     })

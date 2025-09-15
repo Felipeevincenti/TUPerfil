@@ -25,6 +25,7 @@ body {
     padding: 1rem 0;
     overflow: hidden;
 }
+
 .principal__titulo {
     color: #000;
     font-size: 8rem;
@@ -65,43 +66,55 @@ body {
     overflow: hidden;
     padding-bottom: 1rem;
     border: 1px solid #ccc;
-    background-color: var(--color-terciario-fondo);
-    border-radius: .5rem;
+    background-color: var(--color-secundario);
+    border-radius: .7rem;
+    text-decoration: none;
+}
+
+.perfiles__folio:hover {
+    background-color: #ccc;
+    transition: .3s;
 }
 
 .perfiles__folio-img {
     width: 100%;
     padding: .3rem;
+    border-radius: .8rem .8rem 0 0;
 }
 
 .perfiles__folio-info {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 0rem 1rem;
     align-items: center;
+    gap: .5rem;
+}
+
+.perfiles__folio-apellido {
+    color: #000;
 }
 
 .perfiles__folio-estudio {
     font-size: 2rem;
-
 }
 
 .perfiles__folio-estado {
-    background: green;
-    font-size: 1.5rem;
-    color: var(--color-secundario);
-    padding: .3rem .8rem;
-    margin: .5rem;
+    /* background-image: url(../assets/img/banner.jpg);
+    background-color: #FBC02D;
+    background-color: #FFD700; */
+    background: #a0d3fd;
+    font-size: 1.3rem;
+    color: var(--color-primario-hover);
+    padding: .2rem .6rem;
     border-radius: 1rem;
     display: inline-block;
 }
 
 .perfiles__folio-estudio {
-    /* background: orange; */
-     font-size: 1.5rem;
+    font-size: 1.5rem;
     color: var(--color-primario-hover);
     font-weight: bold;
-    padding: .3rem .8rem;
-    margin: .5rem;
     border-radius: 1rem;
     display: inline-block;
 }
