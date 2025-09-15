@@ -122,15 +122,35 @@ form.addEventListener("submit", (e) => {
   );
 
   let formatoFecha = "";
+  let formatoDia = contenedorDia.value;
+  let formatoMes = contenedorMes.value;
 
   if (contenedorMes.value.length == 1) {
-    formatoFecha = `${contenedorAnios.value}-0${contenedorMes.value}-${contenedorDia.value}`;
-  } else {
-    formatoFecha = `${contenedorAnios.value}-${contenedorMes.value}-${contenedorDia.value}`;
+    formatoDia = `0${contenedorMes.value}`
+  }
+  if (contenedorMes.value.length == 1) {
+    formatoMes = `0${contenedorMes.value}`
   }
 
+  if (contenedorMes.value.length == 1) {
+    formatoFecha = `${formatoDia}-0${formatoMes}-${contenedorAnios.value}`;
+  } else {
+    formatoFecha = `${contenedorDia.value}-${contenedorMes.value}-${contenedorAnios.value}`;
+  }
+  const idsExistentes = [1, 2, 3, 120];
+
+  let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios") || "[]");
+
+  const todosLosIDs = [
+    ...idsExistentes,
+    ...usuariosGuardados.map(u => u.id)
+  ];
+
+  let nuevoId = todosLosIDs.length > 0 ? Math.max(...todosLosIDs) + 1 : 1;
+
+
   const usuario = {
-    id: id + 1,
+    id: nuevoId,
     nombre: inputNombre.value,
     apellido: inputApellido.value,
     email: inputEmail.value,
@@ -143,13 +163,10 @@ form.addEventListener("submit", (e) => {
     portada: portadaBase64
   };
 
-  let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios") || "[]");
-
   usuariosGuardados.push(usuario);
 
   localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
 
-  usuario = {};
   inputApellido.value = "";
   inputNombre.value = "";
   inputEmail.value = "";

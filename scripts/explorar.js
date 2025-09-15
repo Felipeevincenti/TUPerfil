@@ -1,7 +1,7 @@
 const contenedorPerfiles = document.getElementById("contenedorPerfiles");
 
 let perfiles = JSON.parse(localStorage.getItem("usuarios") || "[]");
-
+perfiles = perfiles.reverse();
 fetch("../perfiles.json")
     .then(res => res.json())
     .then(res => {
