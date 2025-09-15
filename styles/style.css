@@ -6,12 +6,12 @@
     font-size: 10px;
 }
 
-[data-theme="dark"] {
+[data-theme = "dark"] {
 
     --color-primario: #0ec579;
-    --color-primario-hover: #08131b;
-    --color-secundario: #727070;
-    --color-terciario-fondo: #686666;
+    --color-primario-hover: #ca1d96;
+    --color-secundario: #ca1d96;
+    --color-terciario-fondo: #ca1d96;
 }
 
 
@@ -29,7 +29,6 @@ body {
     flex-direction: column;
     gap: 1rem;
 }
-
 .main__principal {
     text-align: center;
     padding: 1rem 0;
