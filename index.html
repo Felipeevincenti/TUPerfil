@@ -11,33 +11,37 @@
 
 <body>
 
-    <header id="header">
+    <header>
 
-        <div class="header__logo-conteiner">
-            <p class="header__logo"><span>TUP</span>erfil</p>
+        <div id="header">
+
+            <div class="header__logo-conteiner">
+                <p class="header__logo"><span>TUP</span>erfil</p>
+            </div>
+
+            <nav class="header__nav">
+                <ul class="header__ul">
+                    <li class="header__li"><a class="header__link" href="index.html">Inicio</a></li>
+                    <li class="header__li"><a class="header__link" href="templates/explorar.html">Explorar</a></li>
+                    <li class="header__li"><a class="header__link" href="templates/crear-perfil.html">Crear</a></li>
+                </ul>
+            </nav>
+
         </div>
 
-        <nav class="header__nav">
-            <ul class="header__ul">
-                <li class="header__li"><a class="header__link" href="index.html">Inicio</a></li>
-                <li class="header__li"><a class="header__link" href="templates/explorar.html">Explorar</a></li>
-                <li class="header__li"><a class="header__link" href="templates/crear-perfil.html">Crear</a></li>
-            </ul>
-        </nav>
+        <div id="headerMobile" class="headerMobile-2">
 
-    </header>
+            <a class="headerMobile__icono headerMobile__icono-crear" href="templates/crear-perfil.html">
+                <iconify-icon icon="mi:user-add" width="32" height="32"></iconify-icon>
+            </a>
 
-    <header id="headerMobile" class="headerMobile-2">
+            <a id="headerMobile__icono" class="headerMobile__logo" href="index.html">T</a>
 
-        <a class="headerMobile__icono headerMobile__icono-crear" href="templates/crear-perfil.html">
-            <iconify-icon icon="mi:user-add" width="32" height="32"></iconify-icon>
-        </a>
+            <a class="headerMobile__icono headerMobile__icono-explorar" href="templates/explorar.html">
+                <iconify-icon icon="lucide:users" width="32" height="32"></iconify-icon>
+            </a>
 
-        <a id="headerMobile__icono-focus" class="headerMobile__logo" href="index.html">T</a>
-
-        <a class="headerMobile__icono headerMobile__icono-explorar" href="templates/explorar.html">
-            <iconify-icon icon="lucide:users" width="32" height="32"></iconify-icon>
-        </a>
+        </div>
 
     </header>
 
