@@ -210,3 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   aplicarIconos();
 });
+
+
+// -----------------  VALIDACION DEL FORMULARIO ----------------- //
