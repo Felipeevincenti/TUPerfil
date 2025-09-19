@@ -24,26 +24,30 @@ if (perfil) {
 
 function mostrarPerfil(perfil) {
     perfilContainer.innerHTML = `
-             <div class="perfil__img-contenedor" id="imgContenedor">
-            <img class="img__contenedor-img" src="${perfil.portada}" alt="Imagen de ${perfil.nombre}">
-        </div>
+        <div class="perfil__infoPersonal-contenedor">
+            <div class="perfil__img-contenedor" id="imgContenedor">
+                <img class="img__contenedor-img" src="${perfil.portada}" alt="Imagen de ${perfil.nombre}">
+            </div>
 
-        <div class="perfil__nombres-contenedor">
-            <p>${perfil.nombre}</p>
-            <p>${perfil.apellido}</p>
-        </div>
+            <div class="perfil__infoPersonal">
+                <div class="perfil__nombres-contenedor">
+                    <p>${perfil.nombre}</p>
+                    <p>${perfil.apellido}</p>
+                </div>
 
-        <p class="perfil__nacimiento">${perfil.fechaNacimiento}</p>
+                <p class="perfil__nacimiento">${perfil.fechaNacimiento}</p>
 
-        <div class="perfil__tecnologias-contenedor">
-            ${perfil.habilidades
-            .map(tec => `<img class="perfil__tecnologias-icono" src="../assets/icons/${tec}-icono.svg" alt="${tec}">`)
-            .join('')}
-        </div>
+                <div class="perfil__tecnologias-contenedor">
+                    ${perfil.habilidades
+                    .map(tec => `<img class="perfil__tecnologias-icono" src="../assets/icons/${tec}-icono.svg" alt="${tec}">`)
+                    .join('')}
+                </div>
+            </div>
+       </div>
         
         <div class="perfil__sobremi-contenedor">
             <h1 class="perfil__sobremi-titulo">Sobre Mi</h1>
-            <p class="perfil__sobremi-descripcion">${perfil.estado} ${perfil.estudio}</p>
+            <p class="perfil__sobremi-estudioEstado">${perfil.estado} ${perfil.estudio}</p>
             <p class="perfil__sobremi-descripcion">${perfil.descripcion}</p>
         </div>
     `;

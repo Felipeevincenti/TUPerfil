@@ -5,7 +5,7 @@
     --color-fondo: #fff;
     --color-header: #0c385b;
     --color-primario: #125489;
-    /* --color-secundario: #0c385b; */
+    --color-secundario: #0c385b;
 
     --color-terciario-fondo: #eee;
     font-size: 10px;
@@ -19,7 +19,7 @@ body.dark {
     --color-fondo: #0c385b;
     --color-header: #0c385b;
     --color-primario: #0c385b;
-    /* --color-secundario: #125489; */
+    --color-secundario: #125489;
 }
 
 body {
@@ -27,6 +27,7 @@ body {
     background-image: var(--bg-image);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 #main {
@@ -116,9 +117,6 @@ body {
 }
 
 .perfiles__folio-estado {
-    /* background-image: url(../assets/img/banner.jpg);
-    background-color: #FBC02D;
-    background-color: #FFD700; */
     background: #a0d3fd;
     font-size: 1.3rem;
     color: var(--color-secundario);
@@ -138,4 +136,17 @@ body {
 .perfiles__folio-despliegue {
     position: relative;
     z-index: 10;
+}
+
+@media (min-width: 800px) {
+    .perfiles__folios-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+    .perfiles__folios-container {
+        gap: 8rem;
+        padding: 0 4rem;
+    }
 }

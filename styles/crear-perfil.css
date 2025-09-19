@@ -169,3 +169,10 @@
         border-radius: 5px;
         gap: .7rem;
     }
+
+    @media (min-width: 600px) {
+        #crear__form{
+            max-width: 562px;
+            margin: 0 auto;
+        }
+    }

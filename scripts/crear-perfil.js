@@ -15,7 +15,6 @@ const inputTelefono = document.getElementById("telefono");
 const inputEstudio = document.getElementById("estudio");
 const inputEstado = document.getElementById("contenedorEstado");
 const inputDescripcion = document.getElementById("textareaDescripcion");
-const activador = document.getElementById("tema");
 
 let id = 120;
 let portadaBase64 = "";
@@ -150,66 +149,43 @@ form.addEventListener("submit", (e) => {
   let nuevoId = todosLosIDs.length > 0 ? Math.max(...todosLosIDs) + 1 : 1;
 
 
-  const usuario = {
-    id: nuevoId,
-    nombre: inputNombre.value,
-    apellido: inputApellido.value,
-    email: inputEmail.value,
-    telefono: inputTelefono.value,
-    fechaNacimiento: formatoFecha,
-    estado: inputEstado.value,
-    estudio: inputEstudio.value,
-    habilidades,
-    descripcion: inputDescripcion.value,
-    portada: portadaBase64
-  };
 
-  usuariosGuardados.push(usuario);
 
-  localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
+  // -----------------  VALIDACION FORMULARIO ----------------- //
 
-  inputApellido.value = "";
-  inputNombre.value = "";
-  inputEmail.value = "";
-  inputTelefono.value = "";
-  inputEstado.value = "";
-  inputEstudio.value = "";
-  inputDescripcion.value = "";
-  nombreArchivo.text = "No hay archivos seleccionados";
-  preview.src = "";
-  preview.style.display = "none";
-  contenedorAnios.value = "";
-  contenedorMes.value = "";
-  contenedorDia.value = "";
+  const todosInputs = document.querySelectorAll(".crear__form-campo");
+  const todosErrores = document.querySelectorAll(".crear__form-error");
+  let camoposLlenos = true;
+
+  for (let i = 0; i < todosInputs; i++) {
+    if (todosInputs[i].value === "") {
+      todosErrores[i].style.display = "block";
+      camoposLlenos = false;
+    }
+  }
+
+  if (camoposLlenos == true) {
+
+    const usuario = {
+      id: nuevoId,
+      nombre: inputNombre.value,
+      apellido: inputApellido.value,
+      email: inputEmail.value,
+      telefono: inputTelefono.value,
+      fechaNacimiento: formatoFecha,
+      estado: inputEstado.value,
+      estudio: inputEstudio.value,
+      habilidades,
+      descripcion: inputDescripcion.value,
+      portada: portadaBase64
+    };
+
+    usuariosGuardados.push(usuario);
+
+    localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
+    
+    form.reset();
+  }
+
 });
 
-function aplicarIconos() {
-  const iconMoon = activador.querySelector('.icon-moon');
-  const iconSun = activador.querySelector('.icon-sun');
-  const esOscuro = document.body.classList.contains('dark');
-
-  if (esOscuro) {
-    iconMoon.style.display = 'inline';
-    iconSun.style.display = 'none';
-  } else {
-    iconMoon.style.display = 'none';
-    iconSun.style.display = 'inline';
-  }
-}
-
-function cambioTema() {
-  document.body.classList.toggle('dark');
-  const temaActual = document.body.classList.contains('dark') ? 'oscuro' : 'claro';
-  localStorage.setItem('tema', temaActual);
-  aplicarIconos();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('tema') === 'oscuro') {
-    document.body.classList.add('dark');
-  }
-  aplicarIconos();
-});
-
-
-// -----------------  VALIDACION DEL FORMULARIO ----------------- //

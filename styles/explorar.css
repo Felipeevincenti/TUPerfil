@@ -126,7 +126,6 @@
     }
 
     .explorar__folio-info {
-        width: 50%;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -135,6 +134,15 @@
     }
 
     .explorar__folio-nombres {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 1rem;
+        color: #000;
+    }
+
+    .explorar__folio-apellidos {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -166,4 +174,51 @@
         margin: .5rem;
         border-radius: 1rem;
         display: inline-block;
+    }
+
+    @media (min-width: 800px) {
+
+        .explorar__buscar-contenedor {
+            width: 350px;
+            gap: 2.5rem;
+        }
+
+        .contenedor__input-profecion {
+            font-size: 1.8rem;
+            width: 100%;
+        }
+
+        .explorar__folio-info {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+        }
+
+        .explorar__folio-nombres {
+            margin: 0;
+            padding: 0;
+        }
+
+        .explorar__folio-apellidos {
+            margin: 0;
+            padding: 0;
+        }
+
+        .explorar__folio-estudio {
+            margin: 0;
+            padding: 0;
+        }
+
+        .explorar__folio-estado {
+            margin: 0;
+        }
+
+    }
+
+    @media (min-width: 900px) {
+        .main__explorar {
+            max-width: 860px;
+            margin: 0 auto;
+        }
     }
