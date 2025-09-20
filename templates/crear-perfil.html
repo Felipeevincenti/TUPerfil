@@ -76,37 +76,44 @@
 
             <form id="crear__form" class="crear__form">
 
-                <input id="nombre" class="crear__form-campo" placeholder="Nombre" type="text" required>
+                <input id="nombre" class="crear__form-campo" placeholder="Nombre" type="text">
+                <span class="crear__form-error">Campo "Nombre" incompleto</span>
 
-                <input id="apellido" class="crear__form-campo" placeholder="Apellido" type="text" required>
+                <input id="apellido" class="crear__form-campo" placeholder="Apellido" type="text">
+                <span class="crear__form-error">Campo "Apellido" incompleto</span>
 
-                <input id="correoElectronico" class="crear__form-campo" placeholder="Correo Electrónico" type="email" required>
+                <input id="correoElectronico" class="crear__form-campo" placeholder="Correo Electrónico" type="email"
+                    required>
+                <span class="crear__form-error">Campo "Email" incompleto</span>
 
-                <input id="telefono" class="crear__form-campo" placeholder="Telefono" type="tel" required>
+                <input id="telefono" class="crear__form-campo" placeholder="Telefono" type="tel">
+                <span class="crear__form-error">Campo "Telefono" incompleto</span>
 
-                <div class="crear__form-fecha">
+                <div class="crear__form-fecha-contenedor">
 
-                    <select id="contenedorAnios" class="crear__form-campo" name="anio" required>
+                    <select id="contenedorAnios" class="crear__form-fecha" name="anio" required>
                         <option value="">Año</option>
                     </select>
 
-                    <select id="contenedorMes" class="crear__form-campo" name="mes" required>
+                    <select id="contenedorMes" class="crear__form-fecha" name="mes" required>
                         <option value="">Mes</option>
                     </select>
 
-                    <select disabled id="contenedorDia" class="crear__form-campo" name="dia" required>
+                    <select disabled id="contenedorDia" class="crear__form-fecha" name="dia" required>
                         <option value="">Día</option>
                     </select>
 
                 </div>
 
-                <select id="contenedorEstado" class="crear__form-campo" name="estado" required>
+                <select id="contenedorEstado" class="crear__form-campo" name="estado">
                     <option value="">Seleccione estado</option>
                     <option value="estudiando">Estudiando</option>
                     <option value="recibido">Recibido</option>
                 </select>
+                <span class="crear__form-error">Campo incompleto</span>
 
-                <input  id="estudio" class="crear__form-campo" placeholder="Carrera" type="text" required>
+                <input id="estudio" class="crear__form-campo" placeholder="Carrera" type="text">
+                <span class="crear__form-error">Seleccione una carrera</span>
 
                 <div class="crear__form-checkbox-general">
 
@@ -136,12 +143,13 @@
                     </label>
 
                 </div>
-
+                <span class="crear__form-error-habilidades">Debes seleccionar al menos una habilidad</span>
 
                 <textarea id="textareaDescripcion" class="crear__form-campo crear__form-campo__textarea"
-                    placeholder="Descripción" required></textarea>
+                    placeholder="Descripción"></textarea>
+                <span class="crear__form-error">Ingrese una descripción</span>
 
-                <input id="fileInput" class="crear__form-campo" type="file" accept="image/*" hidden required>
+                <input id="fileInput" class="crear__form-campo" type="file" accept="image/*" hidden>
 
                 <img id="preview" src="" alt="Vista previa" style="max-width: 200px; display: none;">
 
@@ -158,6 +166,8 @@
                     </svg>
                     SUBIR PORTADA
                 </button>
+
+                <span class="crear__form-error">Debe seleccionar una imágen</span>
 
                 <button id="crear__form-enviar" class="crear__form-enviar" type="submit">Enviar
                     <iconify-icon icon="lucide:send" width="18" height="24">

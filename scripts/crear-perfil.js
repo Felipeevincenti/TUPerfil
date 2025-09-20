@@ -15,6 +15,10 @@ const inputTelefono = document.getElementById("telefono");
 const inputEstudio = document.getElementById("estudio");
 const inputEstado = document.getElementById("contenedorEstado");
 const inputDescripcion = document.getElementById("textareaDescripcion");
+const todosInputs = document.querySelectorAll(".crear__form-campo");
+const todosErrores = document.querySelectorAll(".crear__form-error");
+const seleccionHabilidades = document.querySelector(".crear__form-checkbox-general");
+const errorHabilidades = document.querySelector(".crear__form-error-habilidades");
 
 let id = 120;
 let portadaBase64 = "";
@@ -133,7 +137,7 @@ form.addEventListener("submit", (e) => {
   }
 
   if (contenedorMes.value.length == 1) {
-    formatoFecha = `${formatoDia}-0${formatoMes}-${contenedorAnios.value}`;
+    formatoFecha = `${formatoDia}-${formatoMes}-${contenedorAnios.value}`;
   } else {
     formatoFecha = `${contenedorDia.value}-${contenedorMes.value}-${contenedorAnios.value}`;
   }
@@ -153,18 +157,28 @@ form.addEventListener("submit", (e) => {
 
   // -----------------  VALIDACION FORMULARIO ----------------- //
 
-  const todosInputs = document.querySelectorAll(".crear__form-campo");
-  const todosErrores = document.querySelectorAll(".crear__form-error");
-  let camoposLlenos = true;
+  let camposLlenos = true;
 
-  for (let i = 0; i < todosInputs; i++) {
-    if (todosInputs[i].value === "") {
-      todosErrores[i].style.display = "block";
-      camoposLlenos = false;
+  for (let i = 0; i < todosInputs.length; i++) {
+    if (todosInputs[i].value.trim() === "") {
+      todosErrores[i].style.display = "flex";
+      camposLlenos = false;
+    } else {
+      todosErrores[i].style.display = "none";
+      camposLlenos = true;
     }
   }
 
-  if (camoposLlenos == true) {
+  if (habilidades.length === 0) {
+
+    errorHabilidades.style.display = "flex";
+    camposLlenos = false;
+  } else {
+    errorHabilidades.style.display = "none";
+    camposLlenos = true;
+  }
+
+  if (camposLlenos) {
 
     const usuario = {
       id: nuevoId,
@@ -183,9 +197,11 @@ form.addEventListener("submit", (e) => {
     usuariosGuardados.push(usuario);
 
     localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
-    
+
+    preview.style.display = "none";
+    portadaBase64 = "";
+    nombreArchivo.textContent = "";
+
     form.reset();
   }
-
 });
-

@@ -11,19 +11,19 @@ function imprimirPerfiles(perfil) {
         : "";
 
     contenedorPerfiles.innerHTML += `
-                    <a class="explorar__folio" href="../templates/perfil.html?id=${perfil.id}">
-                        <div class="explorar__folio-img-container">
-                            <img class="explorar__folio-img" src="${perfil.portada}" alt="">
-                        </div>    
-                        <div class="explorar__folio-info">
-                            <div class="explorar__folio-nombres">
-                                ${nombreHTML}
-                                <p class="explorar__folio-nombres__apellido">${perfil.apellido}</p>
-                            </div>
-                            <small class="explorar__folio-estudio">${perfil.estudio}</small>
-                            <small class="explorar__folio-estado">${perfil.estado}</small>
-                        </div>
-                    </a>`;
+        <a class="explorar__folio" href="../templates/perfil.html?id=${perfil.id}">
+            <div class="explorar__folio-img-container">
+                <img class="explorar__folio-img" src="${perfil.portada}" alt="">
+            </div>    
+            <div class="explorar__folio-info">
+                <div class="explorar__folio-nombres">
+                    ${nombreHTML}
+                    <p class="explorar__folio-nombres__apellido">${perfil.apellido}</p>
+                </div>
+                <small class="explorar__folio-estudio">${perfil.estudio}</small>
+                <small class="explorar__folio-estado">${perfil.estado}</small>
+            </div>
+        </a>`;
 }
 
 fetch("../perfiles.json")
@@ -53,6 +53,6 @@ fetch("../perfiles.json")
         });
 
         mediaQuery.addEventListener("change", () => renderizarPerfiles(""));
-        
+
         renderizarPerfiles("");
     });
